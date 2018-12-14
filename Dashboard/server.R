@@ -1,10 +1,3 @@
-
-
-
-#' loss_run
-#' 
-#' view losses as of a specific date
-#' 
 #' @param val_date
 #' 
 loss_run <- function(val_date) {

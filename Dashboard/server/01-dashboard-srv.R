@@ -73,7 +73,7 @@ dash_metric_boxes <- reactive({
   
   titles <- switch(
     dash_metric_input,
-    "total" = c("Paid Loss & ALAE", "Case Reserve", "Reported Loss & ALAE"),
+    "total" = c("Paid Loss", "Case Reserve", "Reported Loss"),
     "severity" = c("Paid Severity", "Case Reserve Severity", "Reported Severity"),
     "claims" = c("Closed Claim Counts", "Open Claim Counts", "Reported Claim Counts")
   )
@@ -126,16 +126,16 @@ ay_plot_prep <- reactive({
   titles <- switch(
     dash_metric_input,
     "total" = list(
-      "title" = paste0("Reported Loss & ALAE as of ", val_date),
+      "title" = paste0("Reported Loss as of ", val_date),
       "subtitle" = subtitle,
       "series" = c("Total Paid", "Total Case Reserve"),
-      "y_axis" = "Loss & ALAE"
+      "y_axis" = "Total Loss"
     ),
     "severity" = list(
       "title" = paste0("Reported Severity as of ", val_date),
       "subtitle" = subtitle,
       "series" = c("Paid Severity", "Case Reserve Severity"),
-      "y_axis" = "Loss & ALAE"
+      "y_axis" = "Loss (As Severity)"
     ),
     "claims" = list(
       "title" = paste0("Reported Claims as of ", val_date),

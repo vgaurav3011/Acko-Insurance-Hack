@@ -7,18 +7,9 @@ fluidPage(
     headerPanel(
       tags$div(
         a(
-          img(
-            src = "https://res.cloudinary.com/dxqnb8xjb/image/upload/v1499450435/logo-blue_hnvtgb.png", 
-            width = 50
-          ), 
           href = "https://tychobra.com/shiny"
         ),
-        h1("Frequency/Severity Loss Simulation"),
-        actionButton(
-          "tour", 
-          "Take a Tour",
-          class = "btn btn-info pull-right"
-        )
+        h1("Severity Loss Predictor")
       ), 
       windowTitle = "Loss Simulation"
     )
@@ -200,21 +191,6 @@ fluidPage(
                   12,
                   highchartOutput("hist_plot_ceded") %>% withSpinner()
                 )
-              )
-            ),
-            tabPanel(
-              title = "Confidence Level Table",
-              br(),
-              DT::dataTableOutput("sorter")
-            ),
-            tabPanel(
-              title = "Download",
-              br(),
-              wellPanel(
-                h3("Download All Claims"),
-                p("Claim loss amounts are gross of any retention limits.  Each
-                  row represents one frequency/severity observation"),
-                downloadButton("download_claims", "Download Claims")
               )
             )
           )

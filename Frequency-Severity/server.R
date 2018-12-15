@@ -1,5 +1,4 @@
 function(input, output, session) {
-  source("zz-tour.R", local = TRUE)
   
   # determine parameters and default values belonging for frequency distribution
   freq_param_labels <- reactive({
